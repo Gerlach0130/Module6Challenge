@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+    <div id="header"><strong>Weather Dashboard</strong></div>
+    <div id="container">
+    <div id="search">Search for a City:<br>
+        <input id="search-input" class="form-input" type="text" placeholder="Search..."><br>
+        <button id="submit">Submit</button>
+        <div id="fixedlist">
+            <ul id="wholelist">
+                <li><button id="listbutton">New York City</button></li>
+                <li><button id="listbutton">Los Angeles</button></li>
+                <li><button id="listbutton">Atlanta</button></li>
+                <li><button id="listbutton">Dallas</button></li>
+                <li><button id="listbutton">Chicago</button></li>
+                <li><button id="listbutton">Seattle</button></li>
+                <li><button id="listbutton">Miami</button></li>
+                <li><button id="listbutton">Boston</button></li>
+                <li><button id="listbutton">Las Vegas</button></li>
+            </ul>
+        </div>
+    </div>
+    <div id="forcast">
+        <div id="today"><strong>Today's Forecast:</strong>
+            <div id="chosencity">
+            </div>
+        </div>
+        <div id="fiveday"><strong>5-Day Forecast:</strong>
+            <div id="fivedaylist">
+            </div>
+        </div>
+     </div>
+    <script src="./assets/script.js"></script>
+</body>
