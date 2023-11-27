@@ -12,6 +12,8 @@ var miami = document.querySelector(".mia");
 var boston = document.querySelector(".bos");
 var lasVegas = document.querySelector(".lv");
 var chosenCity = document.getElementById("chosencity");
+var submitBtn = document.getElementById("submit");
+var textInput = document.getElementById("search-input");
 
 newYork.addEventListener("click", getNewYork);
 losAngeles.addEventListener("click", getLosAngeles);
@@ -22,6 +24,7 @@ seattle.addEventListener("click", getSeattle);
 miami.addEventListener("click", getMiami);
 boston.addEventListener("click", getBoston);
 lasVegas.addEventListener("click", getLasVegas);
+submitBtn.addEventListener("click", citySearch);
 
 renderPrevious();
 
@@ -35,6 +38,38 @@ function renderPrevious() {
     }
     chosenCity.innerHTML = "<strong>" + name + ":</strong><br>" + "Temperature: " + temp + "°F<br>" + "Humidity: " +
         humidity + "%<br>" + "Wind Speed: " + wind + " mph";
+}
+
+function citySearch() {
+    var queryURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + textInput.value + "&limit=" + 1 + "&appid=" + apiKey;
+    fetch(queryURL, {
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        var lat = data[0].lat;
+        var lon = data[0].lon;
+        var queryURLNew = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + apiKey;
+       fetch(queryURLNew, {
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        console.log(data.name);
+        console.log(data.main.temp);
+        console.log(data.main.humidity);
+        console.log(data.wind.speed);
+        chosenCity.innerHTML = "<strong>" + data.name + ":</strong><br>" + "Temperature: " + data.main.temp + "°F<br>" + "Humidity: " +
+            data.main.humidity + "%<br>" + "Wind Speed: " + data.wind.speed + " mph";
+            localStorage.setItem("name", data.name);
+            localStorage.setItem("temp", data.main.temp);
+            localStorage.setItem("humid", data.main.humidity);
+            localStorage.setItem("wind", data.wind.speed);
+})});
 }
 
 function getNewYork() {
@@ -52,7 +87,7 @@ function getNewYork() {
     console.log(data.main.temp);
     console.log(data.main.humidity);
     console.log(data.wind.speed);
-    chosenCity.innerHTML = "<strong>" + data.name + ":</strong><br>" + "Temperature: " + data.main.temp + "°F<br>" + "Humidity: " +
+    chosenCity.innerHTML = "<strong>" + data.name + "City:</strong><br>" + "Temperature: " + data.main.temp + "°F<br>" + "Humidity: " +
         data.main.humidity + "%<br>" + "Wind Speed: " + data.wind.speed + " mph";
         localStorage.setItem("name", data.name);
         localStorage.setItem("temp", data.main.temp);
