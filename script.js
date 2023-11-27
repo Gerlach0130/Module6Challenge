@@ -30,6 +30,9 @@ function renderPrevious() {
     var temp = localStorage.getItem("temp");
     var humidity = localStorage.getItem("humid");
     var wind = localStorage.getItem("wind");
+    if (name === null) {
+        return;
+    }
     chosenCity.innerHTML = "<strong>" + name + ":</strong><br>" + "Temperature: " + temp + "°F<br>" + "Humidity: " +
         humidity + "%<br>" + "Wind Speed: " + wind + " mph";
 }
