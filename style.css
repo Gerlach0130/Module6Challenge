@@ -60,3 +60,10 @@ button {
     height: 400px;
     margin: 10px;
 }
+
+#day {
+    margin: 20px;
+    height: 350px;
+    width: 240px;
+    text-align: center;
+}
