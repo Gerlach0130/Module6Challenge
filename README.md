@@ -7,4 +7,4 @@ The values of the current weather update every 3 hours. Pending 5-day forecast f
 
 https://gerlach0130.github.io/Module6Challenge/
 
-![Alt text](screenshotdayplanner.png)
+![Alt text](weatherdashboard.png)
