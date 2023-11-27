@@ -5,6 +5,6 @@ There are example popular cities for quickness and ease, and there is a search b
 When a city is selected/found, will display current temperature, humidity, and wind speed in imperial units.
 The values of the current weather update every 3 hours. Pending 5-day forecast functionality.
 
-https://gerlach0130.github.io/Module5Challenge/
+https://gerlach0130.github.io/Module6Challenge/
 
 ![Alt text](screenshotdayplanner.png)
