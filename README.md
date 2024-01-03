@@ -1,4 +1,4 @@
-# Module6Challenge
+# Weather Forecast App
 
 This is a web application that will provide the user with live weather data using OpenWeatherAPI server-side API.
 There are example popular cities for quickness and ease, and there is a search bar to search any city on the globe.
